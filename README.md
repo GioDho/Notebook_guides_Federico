@@ -56,4 +56,15 @@ Output format: list which contains a dictionary with the variable of reco and th
 ### TrackAnalyzer
 Same as TrackRestructurer, but recomputes some reco variables (theta, length, width, tfullrms) and computes extra (like theta_fit and the long and trans projections) and place them in the output format as TrackRestructurer
 
-Extra: plot(index_event)
+Extra: plot(index_event) plots the tracks 2D and the histograms of the projected profiles
+
+### HighLevelSelector
+Used only for muons, but applicable to all. Combines information from the output of TrackAnalyzer and PMTs to further select tracks. For example, given the scintillator position and the waveform, if the track is outside the expected z position, the track is cut.
+
+Input: istance of TrackAnalyzer, instance SingleWaveform, flag true to store in the object the redpix, mask boolean (always true), pos=scintillator position, config
+
+Output: Same structure as TrackAnalyzer but only with survived clusters. 
+
+Extra config: cuts on theta of muons, window in z for the scintillator
+
+Extra: calculate_match_score: attempt to match PMT with camera
