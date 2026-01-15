@@ -51,6 +51,8 @@ Extra: plotexplaintracks(firstimage,lastimage) plots the clusters and puts in th
 ### TrackRestructurer
 For tracks you do not want more analysis, you pass the output of ExtractData to this and you erase empty images and adds image and cluster indexes
 
+Input: Output of ExtractData
+
 Output format: list which contains a dictionary with the variable of reco and the added ones. The iteration is on each single cluster, not image
 
 ### TrackAnalyzer
@@ -68,3 +70,10 @@ Output: Same structure as TrackAnalyzer but only with survived clusters.
 Extra config: cuts on theta of muons, window in z for the scintillator
 
 Extra: calculate_match_score: attempt to match PMT with camera
+
+## MuonAnalyzer
+This takes the long tracks and does the slicing separating the subclusters as the intensity on the long projection goes below a defined threshold.
+
+Input: instance of HighLevelSelector/TrackAnalyzer, step= how large is the micro slicing, min_light: threshold to split subclusters
+
+Output: List of dictionaries with the keys defining the start, end, integral etc of each subcluster (the values of this dictionary are lists!)
