@@ -56,4 +56,4 @@ Output format: list which contains a dictionary with the variable of reco and th
 ## TrackAnalyzer
 Same as TrackRestructurer, but recomputes some reco variables (theta, length, width, tfullrms) and computes extra (like theta_fit and the long and trans projections) and place them in the output format as TrackRestructurer
 
-Extra: plot(index_
+Extra: plot(index_event)
