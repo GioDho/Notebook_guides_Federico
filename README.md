@@ -18,6 +18,9 @@ Analyses one pkl at a time: Estimates trigger existance, where the signal is (co
 
 Input: run number, path pkl, configfile (has explaination)
 
-Output:
+Output: (given by get_data) dictionary with relevant infos. CARE: this is not meant to write things. It gives to other functions the info of a single waveform you selected to be analysed 
 
 Extra in config: sigma usually between 2.5-3
+
+Extra in cluster_finder: a waveform cluster id is defined as: start = above nsigma of baseline; end = if the previous 15 were under the nsigma. Then checks if the cluster has at least one sample below the hard cut threshold, if not cluster is deleted. Merge_channels joins cluster very close to one another
+
