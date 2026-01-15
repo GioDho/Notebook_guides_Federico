@@ -1,0 +1,39 @@
+# ========================
+# PMT Analysis Settings
+# ========================
+
+drift_velocity = 6.01e-3
+min_drop = 2.5
+sigma = 4.0
+abs_threshold_mV = -14.0
+conversion_factor = 0.48828125
+baseline_samples = 300
+sampling_time = 4.0
+impedance = 50.0
+
+
+# ============================
+# Reco Analysis Settings
+# ============================
+
+offset_x = 896.0
+
+# ==================================
+# Custom cuts
+# Keys must start with 'cut_'
+# ==================================
+
+cut_nhits   = sc_nhits > 10000
+#cut_sigma   = sc_lgausssigma < 50
+#cut_density = sc_integral / sc_nhits > 8
+#cut_theta   = sc_theta != 0
+cut_composed = (sc_length > 500) & (sc_width > 150)
+
+# ===================
+# High Level Cuts
+# ===================
+
+theta_cut = 40.0
+z_window = 3.0
+pmt1_position = right  # or left
+
