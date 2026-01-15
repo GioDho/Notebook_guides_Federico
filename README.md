@@ -48,12 +48,12 @@ Extra: plotfilteredimages(firstimage,lastimage) plots the clusters and highlight
 
 Extra: plotexplaintracks(firstimage,lastimage) plots the clusters and puts in the legend the variables (hardcoded) you chose
 
-## TrackRestructurer
+### TrackRestructurer
 For tracks you do not want more analysis, you pass the output of ExtractData to this and you erase empty images and adds image and cluster indexes
 
 Output format: list which contains a dictionary with the variable of reco and the added ones. The iteration is on each single cluster, not image
 
-## TrackAnalyzer
+### TrackAnalyzer
 Same as TrackRestructurer, but recomputes some reco variables (theta, length, width, tfullrms) and computes extra (like theta_fit and the long and trans projections) and place them in the output format as TrackRestructurer
 
 Extra: plot(index_event)
